@@ -261,6 +261,14 @@ pub mod messaging {
         UpdateBtcPrice { price: String },
     }
 
+    bind_contract32!(PhalanxCommand, contract::PHALANX);
+    #[derive(Debug, Clone, Encode, Decode)]
+    pub enum PhalanxCommand {
+        SendOrder { is_buy: bool, size: u64 },
+        SendOrderWithPx { acct_bytes: [u8; 32], is_buy: bool, size: u64, px_u64: u64 },
+        CancelOrder
+    }
+
     /// A fixed point number with 64 integer bits and 64 fractional bits.
     pub type U64F64Bits = u128;
 

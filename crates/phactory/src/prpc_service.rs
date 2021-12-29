@@ -391,6 +391,10 @@ impl<Platform: pal::Platform + Serialize + DeserializeOwned> Phactory<Platform> 
                 contracts::BTC_PRICE_BOT,
                 contracts::btc_price_bot::BtcPriceBot::new()
             );
+            install_contract!(
+                contracts::PHALANX,
+                contracts::phalanx::Phalanx::new()
+            );
         }
 
         let mut runtime_state = RuntimeState {
