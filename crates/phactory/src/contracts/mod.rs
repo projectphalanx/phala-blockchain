@@ -22,7 +22,6 @@ pub mod web3analytics;
 pub mod btc_price_bot;
 pub mod guess_number;
 
-pub mod phalanx;
 
 
 pub use phala_types::contract::*;
